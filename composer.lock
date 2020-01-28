@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc7a46d2f24d4c4ec037d7a42e150dc9",
+    "content-hash": "5bb0a32fd1079ee246ec8697d2bed645",
     "packages": [
         {
             "name": "aura/sqlquery",
@@ -154,16 +154,16 @@
         },
         {
             "name": "delight-im/cookie",
-            "version": "v3.1.2",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/delight-im/PHP-Cookie.git",
-                "reference": "b3ca3233dd1e1e91efb259b9b717a1c941d67ecc"
+                "url": "git@github.com:delight-im/PHP-Cookie.git",
+                "reference": "b6f869b69ac89d519ee1f38ea11671819cefbbf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/delight-im/PHP-Cookie/zipball/b3ca3233dd1e1e91efb259b9b717a1c941d67ecc",
-                "reference": "b3ca3233dd1e1e91efb259b9b717a1c941d67ecc",
+                "url": "https://api.github.com/repos/delight-im/PHP-Cookie/zipball/b6f869b69ac89d519ee1f38ea11671819cefbbf9",
+                "reference": "b6f869b69ac89d519ee1f38ea11671819cefbbf9",
                 "shasum": ""
             },
             "require": {
@@ -191,7 +191,7 @@
                 "samesite",
                 "xss"
             ],
-            "time": "2018-10-11T17:27:45+00:00"
+            "time": "2020-01-24T16:16:55+00:00"
         },
         {
             "name": "delight-im/db",
@@ -785,16 +785,16 @@
     "packages-dev": [
         {
             "name": "filp/whoops",
-            "version": "2.6.0",
+            "version": "2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "ecbc8f3ed2cafca3cfca3d5febaae5a9d2899508"
+                "reference": "fff6f1e4f36be0e0d0b84d66b413d9dcb0c49130"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/ecbc8f3ed2cafca3cfca3d5febaae5a9d2899508",
-                "reference": "ecbc8f3ed2cafca3cfca3d5febaae5a9d2899508",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/fff6f1e4f36be0e0d0b84d66b413d9dcb0c49130",
+                "reference": "fff6f1e4f36be0e0d0b84d66b413d9dcb0c49130",
                 "shasum": ""
             },
             "require": {
@@ -813,7 +813,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.6-dev"
                 }
             },
             "autoload": {
@@ -842,7 +842,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2019-12-25T10:00:00+00:00"
+            "time": "2020-01-15T10:00:00+00:00"
         },
         {
             "name": "psr/log",

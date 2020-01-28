@@ -1,12 +1,13 @@
 {
-  "name": "igorsa/php-tasks",
-  "authors": [
-    {
-      "name": "kasigor555",
-      "email": "kasigor555@gmail.com"
-    }
-  ],
-  "require": {
+    "name": "igorsa/php-tasks-mvc",
+    "description": "Тестовый проект Task Manager MVC",
+    "authors": [
+        {
+            "name": "Igor Kas",
+            "email": "kasigor555@gmail.com"
+        }
+    ],
+    "require": {
     "delight-im/auth": "^8.1",
     "nikic/fast-route": "^1.3",
     "php-di/php-di": "^6.0",
