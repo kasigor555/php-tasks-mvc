@@ -1,11 +1,25 @@
 <?php
 namespace App\controllers;
 
+use League\Plates\Engine;
+
+
 class TasksController
 {
+  private $view;
+
+  public function __construct(Engine $view)
+  {
+    $this->view = $view;
+  }
+
   public function index() // Отображение главной страницы со всеми задачами
   {
-    echo "This is INDEX ACTION";
+    // echo "This is INDEX ACTION";
+    echo $this->view->render('tasks/index', [
+      'name' => 'This is INDEX ACTION',
+      'h1' => 'Это главная страница',
+      ]);
   }
 
   public function create() // Создание новой задачи

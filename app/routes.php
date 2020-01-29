@@ -1,14 +1,20 @@
 <?php
 
-use DI\Container;
+// use DI\Container;
 use DI\ContainerBuilder;
-use FastRoute\RouteCollector;
+// use FastRoute\RouteCollector;
+use League\Plates\Engine;
 
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
 $containerBuilder = new ContainerBuilder;
+$containerBuilder->addDefinitions([
+  Engine::class    =>  function () {
+    return new League\Plates\Engine('../app/views');
+  },
+]);
 $container = $containerBuilder->build();
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
