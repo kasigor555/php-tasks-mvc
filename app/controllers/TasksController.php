@@ -24,7 +24,10 @@ class TasksController
 
   public function create() // Создание новой задачи
   {
-    echo "CREATE new task";
+    echo $this->view->render('tasks/create', [
+      'h1' => 'CREATE new task',
+      'name' => 'Страница создания новой задачи.'
+    ]);
   }
 
   public function save()
