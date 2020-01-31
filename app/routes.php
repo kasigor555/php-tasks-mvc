@@ -1,5 +1,6 @@
 <?php
 
+use Aura\SqlQuery\QueryFactory;
 // use DI\Container;
 use DI\ContainerBuilder;
 // use FastRoute\RouteCollector;
@@ -12,8 +13,14 @@ $whoops->register();
 $containerBuilder = new ContainerBuilder;
 $containerBuilder->addDefinitions([
   Engine::class    =>  function () {
-    return new League\Plates\Engine('../app/views');
+    return new Engine('../app/views');
   },
+  QueryFactory::class => function() {
+    return new QueryFactory('mysql');
+  },
+  PDO::class => function() {
+    return new PDO('mysql:host=localhost; dbname=task-manager', 'root', '');
+  }
 ]);
 $container = $containerBuilder->build();
 

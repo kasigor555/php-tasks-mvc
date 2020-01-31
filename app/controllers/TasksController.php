@@ -2,23 +2,27 @@
 namespace App\controllers;
 
 use League\Plates\Engine;
+use App\services\Database;
 
 
 class TasksController
 {
   private $view;
+  private $database;
 
-  public function __construct(Engine $view)
+  public function __construct(Engine $view, Database $database)
   {
     $this->view = $view;
+    $this->database = $database;
   }
 
   public function index() // Отображение главной страницы со всеми задачами
   {
-    // echo "This is INDEX ACTION";
+    $myTasks = $this->database->getAll('tasks');
     echo $this->view->render('tasks/index', [
       'name' => 'This is INDEX ACTION',
       'h1' => 'Это главная страница',
+      'tasks' => $myTasks,
       ]);
   }
 
@@ -30,7 +34,7 @@ class TasksController
     ]);
   }
 
-  public function save()
+  public function save() // Сохранение задачи
   {
     echo "SAVE task";
 
@@ -39,7 +43,13 @@ class TasksController
 
   public function show($id) // Отображение одной задачи, подробно
   {
-    echo "This is SHOW ACTION with id: $id";
+    $myTask = $this->database->getOne('tasks', $id);
+
+    echo $this->view->render('tasks/show', [
+      'h1' => 'SHOW one task',
+      'name' => 'Страница отображение одной задачи.',
+      'task' => $myTask,
+    ]);
   }
 
   public function edit($id)
