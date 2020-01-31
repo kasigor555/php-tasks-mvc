@@ -6,6 +6,9 @@ use DI\ContainerBuilder;
 // use FastRoute\RouteCollector;
 use League\Plates\Engine;
 
+/**
+ * Подключение модуля отображения ошибок
+ */
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();

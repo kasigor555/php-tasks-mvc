@@ -5,7 +5,7 @@
     <div class="col-md-12">
       <h1><?= $this->e($h1) ?></h1>
       <p><?= $this->e($name) ?></p>
-      <form action="/tasks/store" method="post">
+      <form action="/tasks/save" method="post">
         <div class="form-group">
           <input type="text" class="form-control" name="title">
         </div>

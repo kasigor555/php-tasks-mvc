@@ -1,4 +1,5 @@
 <?php
+
 namespace App\controllers;
 
 use League\Plates\Engine;
@@ -19,11 +20,12 @@ class TasksController
   public function index() // Отображение главной страницы со всеми задачами
   {
     $myTasks = $this->database->getAll('tasks');
+
     echo $this->view->render('tasks/index', [
       'name' => 'This is INDEX ACTION',
       'h1' => 'Это главная страница',
       'tasks' => $myTasks,
-      ]);
+    ]);
   }
 
   public function create() // Создание новой задачи
@@ -36,7 +38,7 @@ class TasksController
 
   public function save() // Сохранение задачи
   {
-    echo "SAVE task";
+    $this->database->save('tasks', $_POST);
 
     header("Location: /");
   }
@@ -54,16 +56,26 @@ class TasksController
 
   public function edit($id)
   {
-    echo "EDIT task id: $id";
+    $myTask = $this->database->getOne('tasks', $id);
+
+    echo $this->view->render('tasks/edit', [
+      'h1' => "EDIT task id: $id",
+      'name' => 'Страница редактирования задачи.',
+      'task' => $myTask,
+    ]);
   }
 
   public function update($id) // Обновление задачи
   {
-    echo "This is UPDATE ACTION, id: $id";
+    $this->database->update('tasks', $id, $_POST);
+
+    header("Location: /");
   }
 
   public function delete($id) // Удаление задачи
   {
-    echo "DELETE task id: $id";
+    $this->database->delete('tasks', $id);
+
+    header("Location: /");
   }
 }

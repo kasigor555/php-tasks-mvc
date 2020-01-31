@@ -5,7 +5,7 @@
     <div class="col-md-12">
       <h1><?= $this->e($h1) ?></h1>
       <p>Hello, <?= $this->e($name) ?></p>
-      <a href="tasks/create" class="btn btn-success">Add Task</a>
+      <a href="tasks/create" class="btn btn-success" title="Добавить задачу">Add Task</a>
       <table class="table">
         <thead>
           <tr>
@@ -21,13 +21,13 @@
               <td><?= $task['id']; ?></td>
               <td><?= $task['title']; ?></td>
               <td>
-                <a href="/tasks/<?= $task['id']; ?>" class="btn btn-info">
+                <a href="/tasks/<?= $task['id']; ?>" class="btn btn-info" title="Показать задачу">
                   Show
                 </a>
-                <a href="edit.php?id=<?= $task['id']; ?>" class="btn btn-warning">
+                <a href="/tasks/<?= $task['id']; ?>/edit" class="btn btn-warning" title="Редактировать задачу">
                   Edit
                 </a>
-                <a onclick="return confirm('Вы уверены, что хотите удалить задачу?');" href="delete.php?id=<?= $task['id']; ?>" class="btn btn-danger">Delete</a>
+                <a onclick="return confirm('Вы уверены, что хотите удалить задачу?');" href="/tasks/<?= $task['id']; ?>/delete" class="btn btn-danger" title="Удалитьь задачу">Delete</a>
               </td>
             </tr>
           <?php endforeach; ?>
