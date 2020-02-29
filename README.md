@@ -1,4 +1,4 @@
-# Simple Task-meneger-MVC
+# Simple Task-manager-MVC
 
 ## Список задач
 
